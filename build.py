@@ -37,7 +37,7 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 def tokens(t):
-    for k, v in {"%%QUIZ_URL%%": site["quiz_url"], "%%PDF%%": site["pdf_file"], "%%XLSX%%": site["xlsx_file"],
+    for k, v in {"%%QUIZ_URL%%": site["quiz_url"], "%%QUIZ_APP%%": "quiz/index.html", "%%PDF%%": site["pdf_file"], "%%XLSX%%": site["xlsx_file"],
                  "%%AUTHOR%%": site["author"], "%%REPO_URL%%": site["repo_url"], "%%KOFI%%": KOFI,
                  "%%VERSION%%": VERSION, "%%UPDATED%%": UPDATED}.items():
         t = t.replace(k, v)
@@ -192,6 +192,25 @@ emit("404.html", render("page.html", "404", page={"title": "Page not found", "su
      content='<p>Try the <a href="index.html">home page</a> or the <a href="techniques.html">techniques</a>.</p>'))
 
 for f in ("style.css", "site.js"): shutil.copy(ROOT / "static" / f, OUT / f)
+
+# ---- embedded quiz (copy of the MIT-licensed Sheet2Quiz app, fixed to the guide's library) ----
+import hashlib
+QSRC, QOUT = ROOT / "quizapp", OUT / "quiz"
+if QOUT.exists(): shutil.rmtree(QOUT)
+shutil.copytree(QSRC, QOUT)
+xlsx_path = OUT / site["xlsx_file"]
+if not xlsx_path.exists(): warnings.append(f"missing {site['xlsx_file']} in docs/")
+h_ = hashlib.sha256()
+for p in sorted(QSRC.rglob("*")):
+    if p.is_file(): h_.update(p.read_bytes())
+if xlsx_path.exists(): h_.update(xlsx_path.read_bytes())
+subs = {"%%SW_VERSION%%": "v" + h_.hexdigest()[:10], "%%XLSX_REL%%": "../" + site["xlsx_file"],
+        "%%TITLE%%": site["title"], "%%EXIT_URL%%": site["exit_url"]}
+for name in ("index.html", "sw.js"):
+    t = (QOUT / name).read_text(encoding="utf-8")
+    for k, v in subs.items(): t = t.replace(k, v)
+    (QOUT / name).write_text(t, encoding="utf-8")
+
 (OUT / ".nojekyll").touch()
 for old in OUT.glob("*.html"):
     if old.name not in written: old.unlink(); warnings.append(f"removed stale {old.name}")

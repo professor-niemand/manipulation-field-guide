@@ -29,7 +29,7 @@
       <div class="tbody">
         {% for b in t.blocks %}<div class="box {{ b.cls }}"><p><strong>{{ b.label }}</strong> {{ b.html|safe }}</p></div>
         {% endfor %}
-        <p class="tmeta"><a href="#{{ t.id }}">Link to this technique</a>{% if site.contact_email %} · <a href="mailto:{{ site.contact_email }}?subject={{ ('Mistake report: ' ~ t.name)|urlencode }}">Report a mistake</a>{% endif %}</p>
+        <p class="tmeta"><a href="#{{ t.id }}">Link to this technique</a>{% if site.contact_email %} · <a href="mailto:{{ site.contact_email }}?subject={{ ('Mistake report: ' ~ t.name)|urlencode }}" title="Reports are reviewed and corrected where needed">Report a mistake</a>{% endif %}</p>
       </div>
     </details>
     {% endfor %}

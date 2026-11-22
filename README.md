@@ -43,3 +43,7 @@ pip install --user markdown pyyaml jinja2
 4. Commit and push. GitHub Pages republishes `docs/` within a few minutes.
 
 The PDF and the quiz library in `docs/` are snapshots. If you change the text of a technique, update them too, and note it in `changelog.yaml`.
+
+## The quiz (docs/quiz/)
+
+`quizapp/` is a copy of the open-source Sheet2Quiz app (MIT licence, notice in `quizapp/LICENSE-SHEET2QUIZ`), changed to use only the guide's library: it reads the .xlsx in `docs/` on every start, has no import or delete, has its own database, and adds the site's Home and Leave site buttons. `build.py` copies it to `docs/quiz/` and stamps a new cache version whenever the app or the .xlsx changes, so installed copies update themselves. Edit `quizapp/`, never `docs/quiz/`.

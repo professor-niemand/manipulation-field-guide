@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#F7F7F5">
+  <meta name="description" content="Quiz on the 51 techniques in the Manipulation Field Guide. Works offline.">
+  <meta name="library-url" content="%%XLSX_REL%%">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Quiz | %%TITLE%%</title>
+</head>
+<body>
+  <!-- Site copy of the Sheet2Quiz app: site Home link, quiz home, Leave site, theme -->
+  <header class="appbar">
+    <nav class="bar-left" aria-label="Quiz">
+      <a class="homelink" href="../index.html">Home</a>
+      <button type="button" class="brand" id="brand" aria-label="Quiz home"><span>Quiz</span></button>
+    </nav>
+    <div class="bar-right">
+      <a id="quick-exit" class="leave" href="%%EXIT_URL%%" data-exit="%%EXIT_URL%%" rel="noopener noreferrer" title="Leave this site now (or press Esc twice)">Leave site <span aria-hidden="true">(Esc ×2)</span></a>
+      <button type="button" class="theme-btn" id="themeBtn"></button>
+    </div>
+  </header>
+
+  <main id="app" class="container"><p class="muted">Loading…</p></main>
+  <noscript>The quiz needs JavaScript to run. The <a href="../techniques.html">techniques page</a> works without it.</noscript>
+
+  <script src="vendor/papaparse.min.js"></script>
+  <script src="vendor/read-excel-file.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap bar">
-    <a class="brand" href="index.html" aria-label="{{ site.title }}, home"><span class="logo" aria-hidden="true"></span><span class="brand-text">{{ site.title }}</span></a>
+    <a class="brand" href="index.html" aria-label="{{ site.title }}, home"><span class="brand-text">{{ site.title }}</span></a>
     <div class="bar-actions">
       <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch between light and dark mode" title="Switch between light and dark mode">
         <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg>
@@ -41,7 +41,7 @@
     <p>Version {{ version }}, last updated {{ updated }}. <a href="updates.html">What changed</a></p>
     <p>© {{ site.author }}. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>: share and adapt it, credit it, and keep it open. Quotations and cited research remain their authors' own.</p>
     <p>This is a teaching guide, not therapy, legal or professional advice. If you are in danger, use <a href="get-help.html">Where to get help</a>.</p>
-    {% if site.contact_email %}<p>Found a mistake? <a href="mailto:{{ site.contact_email }}?subject={{ 'Mistake report'|urlencode }}">{{ site.contact_email }}</a> with a source, and it will be corrected.</p>{% endif %}
+    {% if site.contact_email %}<p>Found a mistake? <a href="mailto:{{ site.contact_email }}?subject={{ 'Mistake report'|urlencode }}">{{ site.contact_email }}</a> with a source. Reports are reviewed, and corrections are made where I think they are needed. This is a personal project, so there is no promise of a reply or a timeline.</p>{% endif %}
     <p><a href="sources.html">Sources</a> · <a href="updates.html">Updates</a> · <a href="{{ site.repo_url }}">Source and licence</a></p>
   </div>
 </footer>
