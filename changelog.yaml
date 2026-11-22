@@ -1,0 +1,6 @@
+# Newest entry first. The top entry sets the version and "last updated" date on every page.
+# To record a change: add a new entry at the top, then run: python3 build.py
+- version: "1.0.0"
+  date: 2026-11-22
+  changes:
+    - First public release of the guide, the website, the PDF and the quiz library.

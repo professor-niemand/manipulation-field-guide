@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <p class="eyebrow">A free, open field guide</p>
+  <h1>{{ site.title }}</h1>
+  <p class="lead">{{ site.subtitle }}</p>
+  <p class="actions"><a class="btn primary" href="start-here.html">Start here</a> <a class="btn" href="techniques.html">Browse the techniques</a> <a class="btn" href="quiz.html">Take the quiz</a></p>
+</section>
+<aside class="notice" role="note">
+  <strong>If you are in danger or afraid of someone,</strong> go to <a href="get-help.html">Where to get help</a> first. In immediate danger, call your local emergency number (999 in the UK). Some of the protective responses in this guide could make things worse with a volatile or controlling person. Use the <strong>Leave site</strong> button at any time.
+</aside>
+<section>
+  <h2>Five levers, 51 techniques</h2>
+  <p>Every technique has a definition, an example and a protective response, chosen to stay low-risk if the other person reacts badly.</p>
+  <div class="cards five">
+  {% for c in cats %}
+    <a class="card cat c{{ c.num }}" href="techniques.html#cat-{{ c.num }}">
+      <span class="chip">{{ c.count }} techniques</span>
+      <h3>{{ c.title }}</h3>
+      <p>{{ c.blurb }}</p>
+    </a>
+  {% endfor %}
+  </div>
+</section>
+<section>
+  <h2>Go further</h2>
+  <div class="cards three">
+    <a class="card" href="bigger-picture.html"><h3>The bigger picture</h3><p>The same levers in propaganda and in algorithms.</p></a>
+    <a class="card" href="defend-yourself.html"><h3>Defend yourself</h3><p>A six-stage personal framework for spotting and steadying.</p></a>
+    <a class="card" href="get-help.html"><h3>Get help</h3><p>Services for abuse, fraud, coercion and more, with UK and international lines.</p></a>
+  </div>
+</section>
+<section class="band">
+  <h2>Free, open and yours to share</h2>
+  <p>This guide stands on other people's research and was written with the help of AI, so it did not feel right to charge for it. In my opinion, the people who most need a guide like this are often the ones who can least afford one. It is licensed CC BY-SA 4.0, and the quiz app is open source.</p>
+  <p class="actions"><a class="btn primary" href="{{ site.pdf_file }}">Download the PDF</a> <a class="btn" href="downloads.html">All downloads</a> <a class="btn" href="about.html">How it was made</a></p>
+</section>
+{% endblock %}

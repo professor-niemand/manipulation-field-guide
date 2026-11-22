@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="prose wide">
+<p class="crumbs"><a href="index.html">Home</a> / Techniques</p>
+<h1>Techniques</h1>
+<p class="lead">{{ intro }}</p>
+<div class="toolbar" id="tech-tools" hidden>
+  <label for="tech-search" class="sr">Search the techniques</label>
+  <input id="tech-search" type="search" placeholder="Search techniques, e.g. guilt, deadline, silence" autocomplete="off">
+  <button type="button" class="btn small" id="expand-all">Expand all</button>
+  <button type="button" class="btn small" id="collapse-all">Collapse all</button>
+  <p class="muted" id="tech-count" aria-live="polite"></p>
+</div>
+<nav class="az" aria-label="A to Z list of techniques">
+  <h2 id="a-to-z">A to Z</h2>
+  <ul>{% for t in az %}<li><a class="c{{ t.cat }}" href="#{{ t.id }}"><span class="dot" aria-hidden="true"></span>{{ t.name }}</a></li>{% endfor %}</ul>
+</nav>
+{% for c in cats %}
+<section class="category c{{ c.num }}" id="cat-{{ c.num }}">
+  <h2><span class="catnum">{{ c.num }}</span> {{ c.title }}</h2>
+  <div class="cat-intro">{{ c.intro_html|safe }}</div>
+  {% for g in c.groups %}
+  <div class="group">
+    <h3>{{ g.title }}</h3>
+    <div class="group-intro">{{ g.intro_html|safe }}</div>
+    {% for t in g.techniques %}
+    <details class="tech" id="{{ t.id }}" data-search="{{ t.search }}">
+      <summary><span class="tnum">{{ t.number }}</span><span class="tname">{{ t.name }}</span><span class="teaser">{{ t.teaser }}</span></summary>
+      <div class="tbody">
+        {% for b in t.blocks %}<div class="box {{ b.cls }}"><p><strong>{{ b.label }}</strong> {{ b.html|safe }}</p></div>
+        {% endfor %}
+        <p class="tmeta"><a href="#{{ t.id }}">Link to this technique</a>{% if site.contact_email %} · <a href="mailto:{{ site.contact_email }}?subject={{ ('Mistake report: ' ~ t.name)|urlencode }}">Report a mistake</a>{% endif %}</p>
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{% endfor %}
+<p class="actions"><a class="btn ghost" href="index.html">Back to Home</a> <a class="btn" href="quiz.html">Take the quiz</a></p>
+</article>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title and page.slug != 'index' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.summary or site.subtitle }}">
+<meta name="color-scheme" content="light dark">
+<script>
+(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);}}catch(e){}document.documentElement.className="js";})();
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-{{ page.slug }}" id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="{{ site.title }}, home"><span class="logo" aria-hidden="true"></span><span class="brand-text">{{ site.title }}</span></a>
+    <div class="bar-actions">
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Switch between light and dark mode" title="Switch between light and dark mode">
+        <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></g></svg>
+        <span class="icon-label" id="theme-label">Theme</span>
+      </button>
+      <button type="button" class="icon-btn menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+    <nav id="site-nav" aria-label="Main">
+      <ul>
+        {% for n in nav %}<li><a href="{{ n.href }}"{% if n.slug == page.slug %} aria-current="page"{% endif %}>{{ n.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><a class="btn ghost small" href="index.html">Home</a> <a class="btn ghost small" href="#top" id="to-top">Back to top</a></p>
+    <p>Version {{ version }}, last updated {{ updated }}. <a href="updates.html">What changed</a></p>
+    <p>© {{ site.author }}. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>: share and adapt it, credit it, and keep it open. Quotations and cited research remain their authors' own.</p>
+    <p>This is a teaching guide, not therapy, legal or professional advice. If you are in danger, use <a href="get-help.html">Where to get help</a>.</p>
+    {% if site.contact_email %}<p>Found a mistake? <a href="mailto:{{ site.contact_email }}?subject={{ 'Mistake report'|urlencode }}">{{ site.contact_email }}</a> with a source, and it will be corrected.</p>{% endif %}
+    <p><a href="sources.html">Sources</a> · <a href="updates.html">Updates</a> · <a href="{{ site.repo_url }}">Source and licence</a></p>
+  </div>
+</footer>
+<a id="quick-exit" class="quick-exit" href="{{ site.exit_url }}" rel="noopener noreferrer" data-exit="{{ site.exit_url }}" title="Leave this site now (or press Esc twice)">Leave site <span aria-hidden="true">(Esc ×2)</span></a>
+<script src="site.js" defer></script>
+</body>
+</html>
