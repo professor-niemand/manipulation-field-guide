@@ -37,7 +37,7 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 def tokens(t):
-    for k, v in {"%%QUIZ_URL%%": site["quiz_url"], "%%QUIZ_APP%%": "quiz/index.html", "%%PDF%%": site["pdf_file"], "%%XLSX%%": site["xlsx_file"],
+    for k, v in {"%%QUIZ_URL%%": site["quiz_url"], "%%QUIZ_APP%%": "quiz/index.html", "%%QUIZ_REPO%%": site["quiz_repo_url"], "%%PDF%%": site["pdf_file"], "%%XLSX%%": site["xlsx_file"],
                  "%%AUTHOR%%": site["author"], "%%REPO_URL%%": site["repo_url"], "%%KOFI%%": KOFI,
                  "%%VERSION%%": VERSION, "%%UPDATED%%": UPDATED}.items():
         t = t.replace(k, v)

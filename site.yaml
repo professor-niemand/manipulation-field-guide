@@ -5,6 +5,7 @@ base_url: https://professor-niemand.github.io/manipulation-field-guide/
 author: professor-niemand
 contact_email: contentnobody@protonmail.com
 quiz_url: https://professor-niemand.github.io/sheet2quiz/
+quiz_repo_url: https://github.com/professor-niemand/sheet2quiz
 repo_url: https://github.com/professor-niemand/manipulation-field-guide
 pdf_file: manipulation-field-guide.pdf
 xlsx_file: manipulation-field-guide-quiz-library.xlsx

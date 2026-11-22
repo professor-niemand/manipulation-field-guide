@@ -1,5 +1,9 @@
 # Newest entry first. The top entry sets the version and "last updated" date on every page.
 # To record a change: add a new entry at the top, then run: python3 build.py
+- version: "1.0.1"
+  date: 2026-11-22
+  changes:
+    - The Downloads page now explains offline use with the Sheet2Quiz app and the library file.
 - version: "1.0.0"
   date: 2026-11-22
   changes:

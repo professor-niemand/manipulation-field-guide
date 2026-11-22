@@ -49,45 +49,35 @@
 <p>Both files are free to download, share and adapt under the licence below.</p>
 <div class="cards two">
 <div class="card"><h3>The guide (PDF)</h3><p>The complete guide, 52 pages. Good for reading offline or printing.</p><p><a class="btn primary" href="manipulation-field-guide.pdf">Download PDF</a></p></div>
-<div class="card"><h3>Quiz library (.xlsx)</h3><p>The 51 techniques as a spreadsheet. Open it in any spreadsheet program, or use it in the Sheet2Quiz app.</p><p><a class="btn primary" href="manipulation-field-guide-quiz-library.xlsx">Download library</a></p></div>
+<div class="card"><h3>Quiz library (.xlsx)</h3><p>The 51 techniques as a spreadsheet. Open it in any spreadsheet program, or import it into the Sheet2Quiz app.</p><p><a class="btn primary" href="manipulation-field-guide-quiz-library.xlsx">Download library</a> <a class="btn ghost" href="#offline">How to use it offline</a></p></div>
 </div>
 
 <h2 id="offline">Use the quiz offline</h2>
-<p>The <a href="quiz.html">quiz</a> is a small web app. Open it once while you are online. After that it works without a connection, and you can install it so it opens like an ordinary app. You do not need to download any file for this. The questions are already inside it.</p>
-<p><strong>Android phone or tablet (Chrome)</strong></p>
-<ol>
-<li>Open the <a href="quiz/index.html">quiz</a> and let it load.</li>
-<li>Open the browser menu (the three dots) and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
-<li>Open it from your home screen whenever you like, online or not.</li>
-</ol>
-<p><strong>iPhone or iPad (Safari)</strong></p>
-<ol>
-<li>Open the <a href="quiz/index.html">quiz</a> in Safari and let it load.</li>
-<li>Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</li>
-<li>Open it from your home screen. Safari is the most reliable browser for this on Apple devices.</li>
-</ol>
-<p><strong>Windows, Mac or Linux computer</strong></p>
+<p>For offline use, the quiz app is <strong><a href="https://professor-niemand.github.io/sheet2quiz/">Sheet2Quiz</a></strong>, the free, open-source app (MIT licence) that the quiz on this site is built from. You install it once, import the library file above, and after that it works without a connection. Everything stays on your device. The code is in the <a href="https://github.com/professor-niemand/sheet2quiz">Sheet2Quiz repository</a>.</p>
+<p><strong>Step 1: install the app (needs a connection once)</strong></p>
 <ul>
-<li><strong>Chrome or Edge:</strong> open the <a href="quiz/index.html">quiz</a> and click the install icon at the right end of the address bar, or open the menu and choose <strong>Install</strong>.</li>
+<li><strong>Android phone or tablet (Chrome):</strong> open <a href="https://professor-niemand.github.io/sheet2quiz/">Sheet2Quiz</a>, let it load, open the browser menu (the three dots) and choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+<li><strong>iPhone or iPad (Safari):</strong> open <a href="https://professor-niemand.github.io/sheet2quiz/">Sheet2Quiz</a> in Safari, tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>. Safari is the most reliable browser for this on Apple devices.</li>
+<li><strong>Windows, Mac or Linux (Chrome or Edge):</strong> open <a href="https://professor-niemand.github.io/sheet2quiz/">Sheet2Quiz</a> and click the install icon at the right end of the address bar, or open the menu and choose <strong>Install</strong>.</li>
 <li><strong>Safari on a Mac:</strong> choose <strong>File</strong>, then <strong>Add to Dock</strong>.</li>
-<li><strong>Firefox on a computer</strong> cannot install web apps, but the quiz still works offline in a normal tab once you have opened it, as long as you do not clear the browser's site data.</li>
+<li><strong>Firefox on a computer</strong> cannot install web apps, but Sheet2Quiz still works offline in a normal tab once you have opened it, as long as you do not clear the browser's site data.</li>
 </ul>
-<p><strong>Check that it works offline.</strong> After opening the quiz once, switch on flight mode (or disconnect from the internet) and open it again. If the first screen appears, offline mode is working.</p>
+<p><strong>Step 2: download the library</strong></p>
+<p>Press <strong>Download library</strong> above and keep the file as an <code>.xlsx</code> file. On a phone, note where the file is saved (usually the Downloads folder).</p>
+<p><strong>Step 3: import it</strong></p>
+<ol>
+<li>In Sheet2Quiz, choose <strong>Import library</strong> and pick the file you downloaded.</li>
+<li>On the setup screen set <strong>Question column</strong> to <em>Example</em> and <strong>Answer column</strong> to <em>Technique</em>. You can also filter by <em>Category</em> or <em>Group</em>, choose how many questions you want, and choose which columns appear on the card after each answer.</li>
+<li>Press <strong>Start quiz</strong>.</li>
+</ol>
+<p><strong>Check that it works offline.</strong> Switch on flight mode (or disconnect from the internet) and open the app from your home screen or browser. If your library is listed, offline mode is working.</p>
 <p><strong>Good to know</strong></p>
 <ul>
-<li>Your results are saved in the browser on that device only. Clearing the browser's site data deletes them, and private or incognito windows do not keep them. The quiz has a <strong>Back up history</strong> button if you want a copy.</li>
-<li>When the guide is updated, the quiz updates itself the next time you open it while online.</li>
+<li>Your libraries and results are saved in the browser on that device only. Clearing the browser's site data deletes them, and private or incognito windows do not keep them. The app has <strong>Back up</strong> and <strong>Restore</strong> buttons.</li>
+<li>Sheet2Quiz works with any <code>.xlsx</code> or <code>.csv</code> file, so you can make your own libraries for any subject. Put your column names in the first row and one card per row.</li>
+<li>The <a href="quiz.html">quiz on this site</a> also works offline once it has been opened, but it only contains this guide's questions.</li>
 <li><strong>An installed app leaves an icon on your home screen or desktop.</strong> If someone else may look at your device, do not install it. Use it in a browser tab instead, and see the <a href="get-help.html#staying-private-online">privacy notes</a>.</li>
 </ul>
-<h2 id="make-your-own-quizzes">Make your own quizzes</h2>
-<p>The quiz on this site only uses the guide's questions. The app it is built from, <a href="https://professor-niemand.github.io/sheet2quiz/">Sheet2Quiz</a>, is free, open source (MIT licence) and works with any spreadsheet. If you want to build libraries for your own revision, it reads <code>.xlsx</code> and <code>.csv</code> files:</p>
-<ol>
-<li>Make a spreadsheet with your column names in the first row, for example <em>Question</em> and <em>Answer</em>, and one card per row.</li>
-<li>Open Sheet2Quiz, choose <strong>Import library</strong> and pick your file.</li>
-<li>On the setup screen choose which column is the question and which is the answer. You can also filter by a category column and choose how many questions to ask.</li>
-<li>It works offline in the same way as above, and everything stays on your device.</li>
-</ol>
-<p>You can also import this guide's library file into Sheet2Quiz, or open it in a spreadsheet program and use it as a starting point for your own.</p>
 <h2 id="licence">Licence</h2>
 <p>The guide and the library are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. You may share and adapt them, including commercially, if you credit them to professor-niemand and release your changes under the same licence. Quotations and cited research remain their authors' own. The full licence text is in the <a href="https://github.com/professor-niemand/manipulation-field-guide">project repository</a>. The quiz app code is under the MIT licence; its notice is included with the app.</p>
 <h2 id="a-note-on-downloads-and-privacy">A note on downloads and privacy</h2>
@@ -99,7 +89,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <p><a class="btn ghost small" href="index.html">Home</a> <a class="btn ghost small" href="#top" id="to-top">Back to top</a></p>
-    <p>Version 1.0.0, last updated 22 November 2026. <a href="updates.html">What changed</a></p>
+    <p>Version 1.0.1, last updated 22 November 2026. <a href="updates.html">What changed</a></p>
     <p>© professor-niemand. Licensed <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>: share and adapt it, credit it, and keep it open. Quotations and cited research remain their authors' own.</p>
     <p>This is a teaching guide, not therapy, legal or professional advice. If you are in danger, use <a href="get-help.html">Where to get help</a>.</p>
     <p>Found a mistake? <a href="mailto:contentnobody@protonmail.com?subject=Mistake%20report">contentnobody@protonmail.com</a> with a source. Reports are reviewed, and corrections are made where I think they are needed. This is a personal project, so there is no promise of a reply or a timeline.</p>
